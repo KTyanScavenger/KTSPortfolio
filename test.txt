@@ -1,0 +1,84 @@
+Kyla Ryan Term 2 Final
+Tuples
+A tuple uses what kind of character? /
+(item)
+[item]
+(item)
+\item\
+3
+The answer is 3. A tuple, unlike lists which use brackets, use parenthesis./
+Sorting
+What is the output of:/a=[u,m,e]/print(sorted(a))/?/
+[e,m,u]
+[m,u,e]
+[m,e,u]
+[u,m,e]
+1
+The answer is 1. Sorted, is a method which 'sorts' or orders the given items alphabetically or numerically./
+Slicing
+How many parameters can slice() take?/
+3
+4
+1
+2
+1
+The answer is 1. Slice() takes three parameters: Start, Stop, Step./
+Modes
+What does the mode "a+" do?/
+Opens the file and gives the program read and write permissions.
+Opens the file, appends it at the end, gives it read and write permissions, and creates if if the file does not exist.
+Appends something to the end of the file without truncating it. 
+Appends it to another file.
+2
+The answer is 2. "a+" does each of these, but specifically creates the file if it does not exist./
+Length
+What is the length of a?/a="Spiderman_skyrim_mod.exe"/
+21
+18
+26
+24
+4
+The answer is 4. There are a total of 24 characters in the string; len() gives the total number of characters./ 
+Append
+What is the proper syntax for .append()?/
+list.append(item)
+item.append(list)
+list.a(item)
+item.a(list)
+1
+The answer is 1. Specify the list before specifying the desired item to append./ 
+Pop
+What exactly does pop() do?/
+Removes and returns the element at a given index from a list.
+Removes and returns the element at a given index from a tuple.
+Removes the element at a given index from a list.
+Removes the element at a given index from a tuple.
+1
+The answer is 1. Pop removes the given item from a list, and returns it to the user. Essentially, it's a memory bank, telling what is at that point. You can't remove from a tuple./
+Upper
+Which will return True if .isupper() is used?/
+Marvel
+MARVEL
+mARVEL
+marvel
+2
+The answer is 2. .isupper() is used to determine if all characters of a given string are uppercase./
+Replace
+If I were to replace ' ' with '!', what would the string/"Fallout!76 is!a**GOOD GAME** "/
+"Fallout 76!is a**GOOD!GAME**!"
+"Fallout 76 is a**GOOD GAME** " 
+"Fallout-76-is-a**GOOD-GAME**-"
+"Fallout!76!is!a**GOOD!GAME**!"
+4
+The answer is 4. Each of the spaces were replaced by an exclamation point. The code is: .replace(" ","!")/
+Join
+What is the output of:/test = ['Python', 'Java', 'Ruby']
+/ s = '->->'
+print(s.join(test)) / ? /
+Python, Java, Ruby, ->->
+Python->->Java->->Ruby
+
+->->, Python, Ruby, Java
+None of the above. 
+2
+The answer is 2. .join() takes objects and returns them one at a time. In this case, the elements of test are being joined by 's.'
