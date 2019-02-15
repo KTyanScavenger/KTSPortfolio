@@ -2,7 +2,7 @@ import time
 import random
 old_time=time.time()
 class Critter(object):
-
+#Create critter and set hunger levels
     def __init__(self, name):
         print("A new critter has been born.")
         self.name = name
@@ -10,7 +10,7 @@ class Critter(object):
         self.boredom=random.randint(0, 11)
 
 
-
+#Create time that passes to determine new hunger and boredom levels
     def __pass_time(self):
         global old_time
         current_time = time.time()
@@ -19,7 +19,7 @@ class Critter(object):
             self.hunger+= 0.5*x
             self.boredom+=0.5*x
         old_time = current_time
-
+#Play funciton to reduce boredom
     def play(self):
         self.__pass_time()
         if self.boredom>=5:
@@ -37,7 +37,7 @@ class Critter(object):
 
 
 
-
+#Talking function that your critter can speak with you
     def talk(self):
         self.__pass_time()
         print(self.name)
@@ -45,7 +45,7 @@ class Critter(object):
         print(self.hunger)
         print(self.boredom)
 
-
+#eat function to remove hunger
     def eat(self):
         self.__pass_time()
         if self.hunger>=5:
@@ -58,7 +58,7 @@ class Critter(object):
 
 
 
-
+#From hunger and boredom levels, it determines the happiness level of the critter
     @property
     def mood(self):
         self.happiness = self.hunger+self.boredom
@@ -71,7 +71,7 @@ class Critter(object):
         else:
             mood="Mad"
         return mood
-
+#Main function that creates everything. 
 def main():
     name=input("What do you want to name your critter? ")
     while True:
@@ -81,7 +81,7 @@ def main():
     choice=None
     while choice!=0:
         crit.talk()
-
+#Options to run eat, play, and talk functions
         choice=int(input("Enter a number to interact with your critter(1, 2, 3, or 0 to exit): "))
         if choice==1:
             crit.talk()
