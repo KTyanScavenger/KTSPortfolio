@@ -18,10 +18,9 @@ board="""
  --------
  6 | 7 | 8
  """
-#PResents the board and possible plays. 
 YES=["yes","Yes","Y","y"]
 NO=["No","N","n","no"]
-#Possible input for the user
+
 def display_instructions(board):
     print("Hi player. Do you want to play a game???")
     print("Here are your instructions:\n"
@@ -30,10 +29,10 @@ def display_instructions(board):
           "There is a situation where neither win, in that case you tie!\n"
           "Enter a number, 1-8 to pick your position!\n"
           "Good luck!")
-    #displays the instructions to the user, telling what they can do and how they play
+    
     print(board)
     print("Computer: YOU'LL NEVER BEAT ME, PUNY HUMAN!")
- ##GIVES THE COMPUTER A VERY EGOTISTICAL PERSONALITY >:D
+
 
 
 
@@ -43,7 +42,7 @@ def ask_yes_no(question):
     ANSWER=("y","n","yes","YES","Yes","No","NO","Y","N")
     while response not in ANSWER:
         response=input(question).lower()
-        #Presents a yes or no question and gives the possible responses the user may give. If the response is not in the response list, tell the user; 
+        
     
     return response
 
@@ -61,7 +60,6 @@ def ask_number(question,low,high):
     """Ask for a number"""
     response="9999"
     while True:
-     #ASks for which position the user would like to place their move
         if response.isdigit():
             if int(response) in range(low,high):
                 break
@@ -81,7 +79,6 @@ def pieces():
         print("\nThen take the first move. You will need it.")
         human=X
         computer=O
-        #Asigns place values for the computer and user
     else:
         print("\nYour bravery will be your undoing... I will go first.")
         computer=X
@@ -97,7 +94,7 @@ def new_board():
     for squares in range(NUM_SQUARES):
         board.append(EMPTY)
     return board
-#NEW GAME
+
 
 def display_board(board):
     """Display game board on screen"""
@@ -107,7 +104,7 @@ def display_board(board):
     print("\t","------")
     print("\n\t",board[6],"|",board[7],"|",board[8],"\n")
 
-#This is the playable board
+
 
 def legal_moves(board):
     moves_list=[]
@@ -115,7 +112,7 @@ def legal_moves(board):
         if board[square]==EMPTY:
             moves_list.append(square)
     return moves_list
-#Determines if the place the user would like to play (or the computer), is playable. 
+
 
 
 def the_winner(board):
@@ -128,7 +125,6 @@ def the_winner(board):
     (1,4,7),
     (0,4,8),
     (2,4,6))
-   #Positional values that allow the player or computer to win
     for row in WAYS_TO_WIN:
         if board[row[0]]==board[row[1]]==board[row[2]] !=EMPTY:
             winner=board[row[0]]
@@ -136,7 +132,7 @@ def the_winner(board):
     if EMPTY not in board:
         return TIE
     return None
- #If there are no more playable moves, the players end in a tie. 
+
 #print(winner)
 
 
@@ -149,8 +145,6 @@ def human_move(board,human):
             print("Computer: YOU SHALL NEVER DEFEAT ME WITH THOSE PETTY MOVES! TRY AGAIN!")
         return move
 
-#Defines the legal moves for a user to play. Asks the user where they would like to play. 
-#Determines if the move is in a list of possible moves. 
 
 
 def next_turn(turn):
@@ -159,7 +153,7 @@ def next_turn(turn):
         return O
     else:
         return X
-#Switches the turns from the player to the computer and vise verse
+
 
 def congrat_winner(the_winner,computer,human):
     if the_winner!=TIE:
@@ -173,7 +167,7 @@ def congrat_winner(the_winner,computer,human):
         elif the_winner==TIE:
             print("It's a tie!")
             print("Computer: ALAS, I REMAIN UNDEFEATED! You put up a good fight, but you still LOST!")
-       #The computer responses to the human winning, itself winning, or a tie. 
+       
        
     print("\n\n\tGAME OVER")
 
@@ -207,11 +201,11 @@ def computer_move(board,computer,human):
         if move in legal_moves(board):
             print(move)
             return move
-#This is the computer determining where it can play, and which moves would best ensure a win. 
+
 
 
 def main(board):
-         #Main function calls to the others to perform their functions in order that the main presents.        
+                
         display_instructions(board)
         computer,human=pieces()
         turn=X
@@ -231,7 +225,7 @@ def main(board):
                 
 
 main(main)
-#call main function                
+                
         
 
             
